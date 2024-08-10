@@ -1,0 +1,127 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px #555;
+}
+
+.tic {
+    color: red;
+}
+
+.tac {
+    color: blue;
+}
+
+.toe {
+    color: yellow;
+}
+
+.papan {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 10px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sel {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.sel:hover {
+    background-color: #ffeb3b;
+    transform: scale(1.1);
+}
+
+.sel.x:before {
+    content: 'X';
+    color: #e91e63;
+    animation: muncul 0.3s ease-out;
+}
+
+.sel.o:before {
+    content: 'O';
+    color: #2196f3;
+    animation: muncul 0.3s ease-out;
+}
+
+.pesan-menang {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: fadein 0.3s;
+}
+
+.pesan-menang.show {
+    display: flex;
+}
+
+@keyframes muncul {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.skor {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.skor p {
+    margin: 0 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: #673ab7;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #9575cd;
+    transform: scale(1.05);
+}
